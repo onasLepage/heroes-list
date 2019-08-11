@@ -1,4 +1,4 @@
-# NombreDeAppHEroes List
+# Heroes List
 This is a lesson where you can learn how to use some directives, routerlink, create and consume services and more
 
 ## Development server
