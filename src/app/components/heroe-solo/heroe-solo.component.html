@@ -1,0 +1,20 @@
+<h1 class="row animeted fadeIn fast">{{heroe.nombre | uppercase}}</h1>
+<small class="row animeted fadeIn fast">({{heroe.aparicion | date:'y'}})</small>
+<!-- el pipe (| date:'y') ese dos punto y Y es para pasar parametro al pipe en este caso solo queremos el anio (y de YEAR) -->
+<hr>
+<div class="row animeted fadeIn fast">
+    <div class="col-md-4">
+        <img class="img-fluid" [src]="heroe.img" [alt]="heroe.nombre">
+        <br><br>
+        <a [routerLink]="['/heroes']" class="btn btn-outline-danger btn-block">Regresar</a>
+    </div>
+
+    <div class="col-md-8">
+        <h3>{{heroe.nombre}}</h3>
+        <hr>
+        <p>{{heroe.bio}}</p>
+        <div>
+            <img class="img-logo" *ngIf="heroe.casa == 'Marvel'" src="assets/img/Marvel.png " [alt]="heroe.casa ">
+            <img class="img-logo" *ngIf="heroe.casa == 'DC'" src="assets/img/DC.jpg " [alt]="heroe.casa ">
+        </div>
+    </div>

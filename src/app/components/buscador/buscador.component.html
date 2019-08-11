@@ -1,0 +1,28 @@
+<h1>Bucando: <small>{{termino}}</small></h1>
+<hr>
+
+<div class="row animated fadeIn fast" *ngIf="heroe.length == 0 ">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No existen coincidencias con {{ termino }}
+        </div>
+
+    </div>
+</div>
+<div class="card-columns animated fadeIn fast">
+    <!-- el let i =  index es para tomar el indice del arreglo y poder ponerlo dinamico en el routerlink abajo -->
+    <!-- <div class="card animate fadeIn fast" *ngFor="let heroeSolo of heroe; let i = index">
+        <img class="card-img-top" [src]="heroeSolo.img" [alt]="heroeSolo.nombre">
+        <div class="card-body">
+            <h5 class="card-title">{{heroeSolo.nombre}}</h5>
+            <p class="card-text">{{heroeSolo.bio}}</p>
+            <p class="card-text"><small class="text-muted">{{heroeSolo.aparicion}}</small></p>
+            <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block ">Ver Más.</button> -->
+    <!-- este boton funciona pero con routerlink -->
+    <!-- <a class="btn btn-outline-primary btn-block " [routerLink]="[ '/heroe-solo',  i]"> Ver mas link...</a> -->
+    <!-- </div>
+    </div> -->
+
+    <app-heroe-tarjeta [heroeSolo]="heroeUnico" [indice]="heroeUnico.idx" *ngFor="let heroeUnico of heroe; let i = index"></app-heroe-tarjeta>
+
+</div>
